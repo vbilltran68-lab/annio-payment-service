@@ -4,7 +4,7 @@ import {
   NestModule,
   MiddlewareConsumer,
 } from '@nestjs/common';
-import { BodyParserMiddleware } from '@annio/core/lib/middlewares';
+import { BodyParserMiddleware } from '@annio/core/middlewares';
 import { IAppConfig } from './interfaces';
 import { OrderService } from './services';
 import { PaymentService } from './services/payment.service';

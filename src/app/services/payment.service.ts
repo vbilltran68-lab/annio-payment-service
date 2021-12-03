@@ -1,9 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { BaseService } from '@annio/core/lib/services';
-import {
-  PAYMENT_STATUS,
-  ProcessOrderPaymentDTO,
-} from '@annio/core/lib/business/payment.business';
+import { BaseService } from '@annio/core/services';
+import { PAYMENT_STATUS } from '@annio/core/business/payment/payment.common';
+import { ProcessOrderPaymentDTO } from '@annio/core/business/payment/payment.dto';
 import { OrderService } from './order.service';
 
 @Injectable()

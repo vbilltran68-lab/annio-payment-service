@@ -5,12 +5,12 @@ import {
   Payload,
   TcpContext,
 } from '@nestjs/microservices';
-import { BaseController } from '@annio/core/lib/controllers';
+import { BaseController } from '@annio/core/controllers';
 import {
-  PAYMENT_REQUEST_ACTION,
   PAYMENT_STATUS,
-  ProcessOrderPaymentDTO,
-} from '@annio/core/lib/business/payment.business';
+  PAYMENT_REQUEST_ACTION,
+} from '@annio/core/business/payment/payment.common';
+import { ProcessOrderPaymentDTO } from '@annio/core/business/payment/payment.dto';
 import { PaymentService } from '@app/services/payment.service';
 
 @Controller()

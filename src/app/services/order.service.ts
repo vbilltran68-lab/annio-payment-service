@@ -1,12 +1,10 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { BaseService } from '@annio/core/lib/services';
-import {
-  OrderDTO,
-  ORDER_REQUEST_ACTION,
-} from '@annio/core/lib/business/order.business';
+import { BaseService } from '@annio/core/services';
+import { ORDER_REQUEST_ACTION } from '@annio/core/business/order/order.common';
+import { OrderDTO } from '@annio/core/business/order/order.dto';
 import { AppConfig } from '@app/config';
 import { ClientProxy } from '@nestjs/microservices';
-import { ObservableUtils } from '@annio/core/lib/utils';
+import { ObservableUtils } from '@annio/core/utils';
 
 @Injectable()
 export class OrderService extends BaseService {
