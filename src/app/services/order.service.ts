@@ -10,7 +10,7 @@ import { ObservableUtils } from '@annio/core/utils';
 export class OrderService extends BaseService {
   constructor(
     @Inject(AppConfig.services.order.key)
-    private readonly orderClient: ClientProxy,
+    private readonly client: ClientProxy,
   ) {
     super(OrderService.name);
   }
@@ -21,7 +21,7 @@ export class OrderService extends BaseService {
 
   public async findById(orderId: string): Promise<OrderDTO> {
     const order: OrderDTO = await ObservableUtils.getFirstResponse(
-      this.orderClient.emit(ORDER_REQUEST_ACTION.GET_BY_ID, orderId),
+      this.client.emit(ORDER_REQUEST_ACTION.GET_BY_ID, orderId),
     );
     return order;
   }
