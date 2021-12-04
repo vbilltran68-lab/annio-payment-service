@@ -8,6 +8,7 @@ export interface IAppConfig {
   };
   env: {
     name: string;
+    port: number;
     microserviceOptions: NestMicroserviceOptions & MicroserviceOptions;
   };
   services: {

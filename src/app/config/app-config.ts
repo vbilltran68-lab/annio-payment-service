@@ -9,6 +9,7 @@ export const AppConfig: IAppConfig = {
   },
   env: {
     name: process.env.NODE_ENV || 'development',
+    port: process.env.PORT ? +process.env.PORT : 5000,
     microserviceOptions: {
       transport: Transport.RMQ,
       options: {
