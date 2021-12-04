@@ -15,6 +15,10 @@ export class OrderService extends BaseService {
     super(OrderService.name);
   }
 
+  async onApplicationBootstrap() {
+    await this.client.connect();
+  }
+
   public async findById(orderId: string): Promise<OrderDTO> {
     const order: OrderDTO = await ObservableUtils.getFirstResponse(
       this.orderClient.emit(ORDER_REQUEST_ACTION.GET_BY_ID, orderId),
