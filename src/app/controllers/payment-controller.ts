@@ -1,5 +1,10 @@
 import { Controller } from '@nestjs/common';
-import { Ctx, EventPattern, Payload, RmqContext } from '@nestjs/microservices';
+import {
+  Ctx,
+  MessagePattern,
+  Payload,
+  RmqContext,
+} from '@nestjs/microservices';
 import { BaseController } from '@annio/core/controllers';
 import {
   PAYMENT_STATUS,
@@ -14,7 +19,7 @@ export class PaymentController extends BaseController {
     super(PaymentController.name);
   }
 
-  @EventPattern(PAYMENT_REQUEST_ACTION.VERIFY)
+  @MessagePattern(PAYMENT_REQUEST_ACTION.VERIFY)
   async verify(
     @Payload() payload: ProcessOrderPaymentDTO,
     @Ctx() context: RmqContext,
